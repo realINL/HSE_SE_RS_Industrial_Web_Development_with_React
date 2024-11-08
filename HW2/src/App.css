@@ -1,0 +1,14 @@
+.app {
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  display: flex;
+  margin-top: 60px; 
+  transition: margin-left 0.3s ease;
+  justify-content: center;
+}
+
+.content .sidebar.open + .product-list {
+  margin-left: 250px; 
+}

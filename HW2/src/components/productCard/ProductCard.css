@@ -1,0 +1,60 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Максимальная ширина карточки */
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+  }
+  
+  .product-image img {
+    width: 100%; /* Ширина изображения растягивается на всю карточку */
+    height: auto; /* Высота адаптируется пропорционально */
+    max-height: 400px; /* Ограничиваем максимальную высоту */
+    object-fit: cover; /* Изображение будет масштабироваться с сохранением пропорций */
+  }
+  
+  .no-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-color: #f0f0f0;
+    color: #888;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .product-details {
+    padding: 20px;
+    background-color: #f9f9f9;
+    flex: 1;
+  }
+  
+  .product-details h2 {
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 24px; 
+  }
+  
+  .product-details .description {
+    color: #333;
+    min-height: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;   
+  }
+  
+
+  

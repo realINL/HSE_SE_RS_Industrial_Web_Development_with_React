@@ -1,0 +1,48 @@
+.product-bigCard {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  
+ 
+  
+  .product-bigImage img {
+    width: 100%; 
+    height: auto; 
+    max-height: 400px; 
+    object-fit: cover; 
+  }
+  
+  .no-bigImage {
+    width: 100%;
+    width: 600px;
+    
+  } 
+  
+  .product-bigDetails {
+    padding: 20px;
+    background-color: #f9f9f9;
+    flex: 1;
+  }
+  
+  .product-bigDetails h2 {
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 24px; 
+  }
+  
+  .product-bigDetails h4 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .product-bigDetails p {
+    margin: 5px 0;
+    font-size: 16px; 
+  }
+  
+  .product-bigDetails .description {
+    color: black;
+  }
+  
