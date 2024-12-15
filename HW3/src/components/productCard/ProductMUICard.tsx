@@ -6,6 +6,9 @@ import Typography from '@mui/material/Typography';
 import { Box, CardActionArea, styled } from "@mui/material";
 import { Product } from "../../data/Product";
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+import { useNavigate } from "react-router-dom";
+
+const noImage = '../../assets/inf.png';
 
 const OneLineTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -21,31 +24,46 @@ const OneLineTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 
 const ProductMUICard: React.FC<{ product: Product }> = ({ product }) => {
-  const { name, category, image, description, unit, quantity } = product;
+  const { name, category, image, description, unit, quantity, price } = product;
+  const navigate = useNavigate();
+
   return (
-    <Box width={300}>
+    <Box width={300} onClick={() => navigate(`/product/${product.id}`)}>
       <OneLineTooltip title={description}>
 
 
         <Card
-          sx={{ ":hover": { scale: 1.05 } }}>
+          sx={{ boxShadow: 3, borderRadius: 4, ":hover": { scale: 1.05 } }}>
           <CardActionArea>
+
+            <Typography gutterBottom variant="h5" sx={{ fontWeight: 'bold', fontSize: 18, margin: '8px 8px 8px', textAlign: 'center' }}>
+              {name}
+            </Typography>
+
             <CardMedia
               sx={{ height: 300 }}
-              image={image}
+              image={image || noImage}
               title={name}
             />
+
             <CardContent>
-              <Typography gutterBottom variant="h5">
-                {name}
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {category}
-              </Typography>
-              <Typography
-              >
-                {quantity} {unit}
-              </Typography>
+              <Box display="flex" justifyContent="space-between" alignItems="center">
+
+                <Box>
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    {category.name}
+                  </Typography>
+
+                  <Typography>
+                    {quantity} {unit}
+                  </Typography>
+                </Box>
+
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  {price} ₽
+                </Typography>
+
+              </Box>
             </CardContent>
           </CardActionArea>
         </Card>

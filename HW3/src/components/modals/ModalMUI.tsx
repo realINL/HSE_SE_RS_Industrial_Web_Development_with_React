@@ -17,10 +17,8 @@ const style = {
     width: '20vw',
     height: '75vh',
     bgcolor: 'background.paper',
-    // border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-    // maxHeight:"80vh",
     overflowY: "scroll"
   };
 
@@ -36,7 +34,6 @@ const ModalMUI: React.FC<ModalMUIProps> = ({ onOpen, onClose, product}) => {
             aria-describedby="modal-modal-description"
         >
             <Box sx={style}>
-                {/* <img></img> */}
                 {product.image && <img src={product.image} alt="Product" style={{ maxWidth: "100%", maxHeight: "80vh", display: "block", margin: "0" }} />}
                 <Typography id="modal-modal-title" variant="h4" component="h4">
                     {product.name}
@@ -47,7 +44,7 @@ const ModalMUI: React.FC<ModalMUIProps> = ({ onOpen, onClose, product}) => {
                 </Typography>
 
                 <Typography variant="body1">
-                    {product.category}
+                    {product.category.name}
                 </Typography>
 
                 <Typography  sx={{ mt: 2 }} variant="h5">

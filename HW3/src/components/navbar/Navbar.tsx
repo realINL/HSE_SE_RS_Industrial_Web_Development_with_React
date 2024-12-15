@@ -6,6 +6,7 @@ type NavbarProps = {
   onSidebarToggle: () => void;
 };
 
+
 const Navbar: React.FC<NavbarProps> = ({ onSidebarToggle }) => {
   return (
 
@@ -23,10 +24,35 @@ const Navbar: React.FC<NavbarProps> = ({ onSidebarToggle }) => {
           <MenuIcon />
         </IconButton>
         <Box sx={{ ml: "auto" }}>
-          <Button sx={{ textTransform: 'none' }} color="inherit" >Товары</Button>
-          <Button sx={{ textTransform: 'none' }} color="inherit">Склады</Button>
-          <Button sx={{ textTransform: 'none' }} color="inherit">О системе</Button>
-          <Button sx={{ textTransform: 'none' }} color="inherit">Профиль</Button>
+
+          <Button
+            sx={{ textTransform: 'none' }}
+            color="inherit"
+          >
+            Товары
+          </Button>
+
+          <Button
+            sx={{ textTransform: 'none' }}
+            color="inherit"
+          >
+            Категории
+          </Button>
+
+          <Button
+            sx={{ textTransform: 'none' }}
+            color="inherit"
+          >
+            О системе
+          </Button>
+
+          <Button
+            sx={{ textTransform: 'none' }}
+            color="inherit"
+          >
+            Профиль
+          </Button>
+
         </Box>
       </Toolbar>
     </AppBar>
